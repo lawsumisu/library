@@ -1,11 +1,12 @@
 {
-  "name": "common-utilities",
+  "name": "@lawsumisu/common-utilities",
   "main": "index.js",
   "types": "index.d.ts",
   "version": "0.1.0",
   "description": "Basic collection of convenient data structures and functions",
   "scripts": {
-    "build": "npm run build-declaration && npm run build-source",
+    "clean": "rm index.d.ts index.js",
+    "build": "npm run clean && npm run build-declaration && npm run build-source",
     "build-declaration": "tsc -p ./tsconfig.json -d --outDir dist && gulp scripts && rm -r dist",
     "build-source": "babel ./src --extensions '.ts' --out-file index.js",
     "test": "mocha --require ./babelRequire.js 'src/**/*.test.ts'"
