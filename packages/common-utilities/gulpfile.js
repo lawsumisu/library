@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
-gulp.task('scripts', function() {
-  return gulp.src(['./dist/**/*.d.ts'])
+gulp.task('dts', function() {
+  return gulp.src(['./temp/**/*.d.ts'])
     .pipe(concat('index.d.ts'))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./dist'));
 });

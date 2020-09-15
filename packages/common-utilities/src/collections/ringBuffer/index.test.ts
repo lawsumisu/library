@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { RingBuffer } from 'src/ringBuffer/ringBuffer.util';
+import { RingBuffer } from 'src/collections/ringBuffer';
 
 describe('Ring Buffer Utility Tests', () => {
   describe('constructor', () => {

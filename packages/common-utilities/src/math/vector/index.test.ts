@@ -1,4 +1,4 @@
-import { Vector2 } from 'src/math/vector/vector';
+import { Vector2 } from 'src/math/vector';
 import { expect } from 'chai';
 
 describe('Vector Tests', () => {
