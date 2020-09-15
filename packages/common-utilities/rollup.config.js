@@ -26,6 +26,7 @@ export default {
     }),
     babel({
       extensions,
+      ignore: ["**/*.test.ts"]
     }),
   ],
 };
