@@ -8,3 +8,4 @@ node_modules/
 # Generated Files
 index.js
 index.d.ts
+.nyc_output/

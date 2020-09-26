@@ -52,6 +52,10 @@ export class Vector2 implements Point {
     return this.x*v.x + this.y*v.y;
   }
 
+  public cross(v: Vector2): number {
+    return this.x*v.y - this.y*v.x;
+  }
+
   public reflect(n: Vector2): Vector2 {
     return n.scale(n.dot(this)).scale(2).subtract(this);
   }

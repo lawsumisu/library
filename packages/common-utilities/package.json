@@ -8,7 +8,8 @@
     "build": "npm run build-declaration && npm run build-source",
     "build-declaration": "tsc -p ./tsconfig.json -d --emitDeclarationOnly --outDir temp && gulp dts && rm -r temp",
     "build-source": "rollup -c",
-    "test": "mocha --require ./babelRequire.js 'src/**/*.test.ts'"
+    "test": "nyc mocha --require ./babelRequire.js 'src/**/*.test.ts'",
+    "prepublishOnly": "npm test && npm version minor"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "mocha": "^8.1.3",
+    "nyc": "^15.1.0",
     "prettier": "^2.1.1",
     "rollup": "^2.26.11",
     "rollup-plugin-babel": "^4.4.0",
