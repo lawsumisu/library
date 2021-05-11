@@ -84,15 +84,26 @@ export class Vector3 {
 /**
  * Represents a polar coordinate (r, theta).
  * r: magnitude of line measured from the origin to this coordinate.
- * theta: angle between the vector and the x-axis. Range: [-pi, pi]
+ * theta: angle between the vector and the x-axis. Range: [-2*pi, 2*pi]
  */
 export class PolarVector {
-  public r: number;
+  public _r: number;
   private _theta: number;
 
   constructor(r: number, theta: number) {
-    this.r = r;
     this.theta = theta;
+    this.r = r;
+  }
+
+  public get r(): number {
+    return this._r;
+  }
+
+  public set r(r: number) {
+    if (r < 0) {
+      this._theta = (this._theta + Math.PI) % (Math.PI * 2);
+    }
+    this._r = Math.abs(r);
   }
 
   public get theta(): number {
@@ -100,15 +111,7 @@ export class PolarVector {
   }
 
   public set theta(t: number) {
-    let modT = t % (Math.PI * 2);
-    if (modT < -Math.PI / 2) {
-      modT += Math.PI;
-      this.r *= -1;
-    } else if (modT > Math.PI / 2) {
-      modT -= Math.PI;
-      this.r *= -1;
-    }
-    this._theta = modT;
+    this._theta = t % (Math.PI * 2);
   }
 
   public toCartesian(): Vector2 {
