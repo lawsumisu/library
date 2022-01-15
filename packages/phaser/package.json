@@ -1,7 +1,7 @@
 {
-  "name": "phaser-utilities",
+  "name": "@lawsumisu/phaser",
   "description": "Phaser-specific custom utilities",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -14,10 +14,13 @@
     "build": "npm run clean && npm run build-source",
     "build-source": "tsc -p ./tsconfig.json -d --outDir dist",
     "test": "nyc mocha --require ./babelRequire.js 'src/**/*.test.ts'",
-    "prepublishOnly": "npm test && npm version minor"
+    "prepublishOnly": "npm version minor"
   },
   "author": "lawsumisu",
   "license": "ISC",
+  "files": [
+    "dist/"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
