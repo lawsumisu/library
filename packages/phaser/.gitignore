@@ -1,0 +1,10 @@
+# JetBrains
+.idea/
+
+# Node
+node_modules/
+.npmrc
+
+# Generated Files
+dist/
+.nyc_output/
