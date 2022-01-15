@@ -1,4 +1,3 @@
-export * from 'src/geom';
-export * from 'src/plugins/debug.plugin';
-export * from 'src/plugins/gameInput.plugin';
-export * from 'src/plugins/keyboard.plugin';
+export * from './geom';
+export * from './plugins/debug.plugin';
+export { default as paletteFragShader } from'./shaders/palette.frag';

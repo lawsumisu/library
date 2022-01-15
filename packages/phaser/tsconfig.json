@@ -12,6 +12,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "moduleResolution": "node",
+    "declaration": true,
     "jsx": "preserve",
     "resolveJsonModule": true,
     "lib": [
